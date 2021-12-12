@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:13
+#    volumes:
+#      - ./data/db:/var/lib/postgresql/data
+    restart: always
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+  django:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/srv
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
