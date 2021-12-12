@@ -5,6 +5,15 @@
 - docker
 - docker-compose
 
+## Quick install
+
+Installation is supposed to be very simple
+```
+make s
+```
+
+You can replace the name of the django folder "project" by one custom name
+
 ## Reinstalling project
 
 Follow directives from: https://docs.docker.com/samples/django/

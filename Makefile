@@ -19,3 +19,5 @@ log logs l:
 prune-all prune:
 	docker system prune -a
 
+console c:
+	docker-compose run django bash
